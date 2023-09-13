@@ -7,28 +7,32 @@ $team = [
         'name' => 'Kori McClure',
         'role' => 'CIT Student at NKU',
         'secondaryInfo' => 'Team Member',
-        'profile' => 'View Profile'
+        'profile' => 'View Profile',
+        'age' => ' '
     ],
     [
         'photo' => 'assets/images/headshot.jpg',
         'name' => 'Alli Garcia',
         'role' => 'ASE Student at NKU',
         'secondaryInfo' => 'Team Member',
-        'profile' => 'View Profile'
+        'profile' => 'View Profile',
+        'age' => '21'
     ],
     [
         'photo' => 'assets/images/profile2.jpg',
         'name' => 'Cody King',
         'role' => 'ASE Student at NKU',
         'secondaryInfo' => 'Team Member',
-        'profile' => 'View Profile'
+        'profile' => 'View Profile',
+        'age' => ' '
     ],
     [
         'photo' => 'assets/images/profile3.jpg',
         'name' => 'Dillon Beckerich',
         'role' => 'COI Student',
         'secondaryInfo' => 'Team Member',
-        'profile' => 'View Profile'
+        'profile' => 'View Profile',
+        'age' => ' '
     ],
 ];
 

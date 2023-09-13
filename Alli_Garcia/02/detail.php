@@ -3,6 +3,7 @@ $members = [
 	[
 		'profilePicture' => 'assets/images/profile0.jpg',
 		'name' => 'Kori Mcclure',
+		'age' => ' ',
 		'desiredJob' => 'Software Engineering Intern',
 		'email' => 'mcclureg1@nku.edu',
 		'phone' => '859-270-3504',
@@ -82,6 +83,7 @@ $members = [
 	[
 		'profilePicture' => 'assets\images\headshot.jpg',
 		'name' => 'Alli Garcia',
+		'age' => '21',
 		'desiredJob' => 'Digital Technology Intern',
 		'email' => 'garciaa12@mymail.nku.edu',
 		'phone' => '+1(513)-302-3689',
@@ -171,6 +173,7 @@ $members = [
 	[
 		'profilePicture' => 'assets/images/profile2.jpg',
 		'name' => 'Cody King',
+		'age' => ' ',
 		'desiredJob' => 'Software Engineer',
 		'email' => 'cody.king04@outlook.com',
 		'phone' => '606-782-5551',
@@ -242,6 +245,7 @@ $members = [
 	[
 		'profilePicture' => 'assets/images/profile3.jpg',
 		'name' => 'Billon Deckerich',
+		'age' => ' ',
 		'desiredJob' => 'Cybersecurity Specialist',
 		'email' => 'bdeckrick@outlook.com',
 		'phone' => '555-242-9113',
