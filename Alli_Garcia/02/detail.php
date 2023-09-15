@@ -380,7 +380,7 @@ $members = [
 										</a></li>
 									<li class='mb-2'><i class="fas fa-heart"
 											data-fa-transform='grow-3'></i>
-										<?= $age = calculateAge($team[$i]['birthday']);
+										<?= $age = calculateAge($members[$_GET['index']]['birthday']);
 											$age ?>
 									</li>
 								</ul>
