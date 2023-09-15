@@ -79,6 +79,7 @@ $team = [
                                  <div class="primary-info col-auto">
                                      <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">' . $team[$i]['name'] . '</h1><!--//name line-->
                                      <div class="title mb-3">' . $team[$i]['role'] . '</div><!--//role line-->
+                                     <div class="title mb-3">' . $team[$i]['birthday'] . '</div>
                                      <a href=detail.php?index=' . $i . ' class="btn btn-secondary">' . $team[$i]['profile'] . '</a><!--//Link the index page to the detail page using a different GET value for each person-->
                                  </div><!--//primary-info-->
                                  <div class="secondary-info col-auto mt-2">' . $team[$i]['secondaryInfo'] . '</div><!--//secondary-info-->
