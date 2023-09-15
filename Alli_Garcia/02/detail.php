@@ -359,6 +359,9 @@ $members = [
 								<h1 class='name mt-0 mb-1 text-white text-uppercase text-uppercase'>
 									<?= $members[$_GET['index']]['name'] ?>
 								</h1>
+								<h1 class='name mt-0 mb-1 text-white text-uppercase text-uppercase'>
+									<?= $members[$_GET['index']]['age'] ?>
+								</h1>
 								<div class='title mb-3'>
 									<?= $members[$_GET['index']]['desiredJob'] ?>
 								</div>
