@@ -1,6 +1,11 @@
 <?php
 // INSERT DATA HERE.
-
+function calculateAge($dateOfBirth) {
+    $dob = new DateTime($dateOfBirth);
+    $currentDate = new DateTime();
+    $age = $currentDate->diff($dob)->y;
+    return $age;
+}
 $team = [
     [
         'photo' => 'assets/images/profile0.jpg',
@@ -64,11 +69,13 @@ $team = [
 </head>
 
 <body>
+
     <article class="resume-wrapper text-center position-relative">
         <div class="resume-wrapper-inner mx-auto text-start bg-white shadow-lg">
             <h1 class="py-4 text-center">OUR AMAZING TEAM</h1>
 
             <?php for ($i = 0; $i < count($team); $i++) {
+                $age = calculateAge($team[$i]['birthday']);
                 echo '<header class="resume-header pt-4 pt-md-0">
                      <div class="row">
                          <div class="col-block col-md-auto resume-picture-holder text-center text-md-start">
@@ -79,7 +86,7 @@ $team = [
                                  <div class="primary-info col-auto">
                                      <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">' . $team[$i]['name'] . '</h1><!--//name line-->
                                      <div class="title mb-3">' . $team[$i]['role'] . '</div><!--//role line-->
-                                     <div class="title mb-3">' . $team[$i]['birthday'] . '</div>
+                                     <div class="title mb-3">Age:' . $age . ' years</div>
                                      <a href=detail.php?index=' . $i . ' class="btn btn-secondary">' . $team[$i]['profile'] . '</a><!--//Link the index page to the detail page using a different GET value for each person-->
                                  </div><!--//primary-info-->
                                  <div class="secondary-info col-auto mt-2">' . $team[$i]['secondaryInfo'] . '</div><!--//secondary-info-->
