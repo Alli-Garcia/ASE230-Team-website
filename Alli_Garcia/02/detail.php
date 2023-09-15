@@ -1,4 +1,10 @@
 <?php
+function calculateAge($dateOfBirth) {
+    $dob = new DateTime($dateOfBirth);
+    $currentDate = new DateTime();
+    $age = $currentDate->diff($dob)->y;
+    return $age;
+}
 $members = [
 	[
 		'profilePicture' => 'assets/images/profile0.jpg',
@@ -373,7 +379,7 @@ $members = [
 										</a></li>
 									<li class='mb-2'><i class="fas fa-heart"
 											data-fa-transform='grow-3'></i>
-										<?= $members[$_GET['index']]['birthday'] ?>
+										<?= $age ?>
 									</li>
 								</ul>
 							</div><!--//primary-info-->
