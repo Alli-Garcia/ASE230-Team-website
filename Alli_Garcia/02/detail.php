@@ -173,7 +173,7 @@ $members = [
 	[
 		'profilePicture' => 'assets/images/profile2.jpg',
 		'name' => 'Cody King',
-		'birthday' => '  ',
+		'birthday' => ' 10/12/2002',
 		'desiredJob' => 'Software Engineer',
 		'email' => 'cody.king04@outlook.com',
 		'phone' => '606-782-5551',

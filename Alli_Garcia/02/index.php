@@ -24,7 +24,7 @@ $team = [
         'role' => 'ASE Student at NKU',
         'secondaryInfo' => 'Team Member',
         'profile' => 'View Profile',
-        'birthday' => ' '
+        'birthday' => '10/12/2002'
     ],
     [
         'photo' => 'assets/images/profile3.jpg',
