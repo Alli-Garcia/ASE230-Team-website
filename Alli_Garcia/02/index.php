@@ -8,7 +8,7 @@ $team = [
         'role' => 'CIT Student at NKU',
         'secondaryInfo' => 'Team Member',
         'profile' => 'View Profile',
-        'age' => ' '
+        'birthday' => ' '
     ],
     [
         'photo' => 'assets/images/headshot.jpg',
@@ -16,7 +16,7 @@ $team = [
         'role' => 'ASE Student at NKU',
         'secondaryInfo' => 'Team Member',
         'profile' => 'View Profile',
-        'age' => '21'
+        'birthday' => '08/19/2002'
     ],
     [
         'photo' => 'assets/images/profile2.jpg',
@@ -24,7 +24,7 @@ $team = [
         'role' => 'ASE Student at NKU',
         'secondaryInfo' => 'Team Member',
         'profile' => 'View Profile',
-        'age' => ' '
+        'birthday' => '03/17/1997'
     ],
     [
         'photo' => 'assets/images/profile3.jpg',
@@ -32,7 +32,7 @@ $team = [
         'role' => 'COI Student',
         'secondaryInfo' => 'Team Member',
         'profile' => 'View Profile',
-        'age' => ' '
+        'birthday' => '01/14/2001'
     ],
 ];
 
