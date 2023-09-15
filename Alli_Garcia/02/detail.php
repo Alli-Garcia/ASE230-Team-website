@@ -3,7 +3,7 @@ $members = [
 	[
 		'profilePicture' => 'assets/images/profile0.jpg',
 		'name' => 'Kori Mcclure',
-		'birthday' => '03/17/1997',
+		'birthday' => ' 03/17/1997',
 		'desiredJob' => 'Software Engineering Intern',
 		'email' => 'mcclureg1@nku.edu',
 		'phone' => '859-270-3504',
@@ -83,7 +83,7 @@ $members = [
 	[
 		'profilePicture' => 'assets\images\headshot.jpg',
 		'name' => 'Alli Garcia',
-		'birthday' => '08/19/2002',
+		'birthday' => ' 08/19/2002',
 		'desiredJob' => 'Digital Technology Intern',
 		'email' => 'garciaa12@mymail.nku.edu',
 		'phone' => '+1(513)-302-3689',
@@ -173,7 +173,7 @@ $members = [
 	[
 		'profilePicture' => 'assets/images/profile2.jpg',
 		'name' => 'Cody King',
-		'birthday' => ' ',
+		'birthday' => '  ',
 		'desiredJob' => 'Software Engineer',
 		'email' => 'cody.king04@outlook.com',
 		'phone' => '606-782-5551',
@@ -245,7 +245,7 @@ $members = [
 	[
 		'profilePicture' => 'assets/images/profile3.jpg',
 		'name' => 'Billon Deckerich',
-		'birthday' => '01/14/2001',
+		'birthday' => ' 01/14/2001',
 		'desiredJob' => 'Cybersecurity Specialist',
 		'email' => 'bdeckrick@outlook.com',
 		'phone' => '555-242-9113',
@@ -371,7 +371,7 @@ $members = [
 												data-fa-transform='grow-6'></i>
 											<?= $members[$_GET['index']]['phone'] ?>
 										</a></li>
-									<li class='mb-2'><i class='far fa-envelope fa-fw me-2'
+									<li class='mb-2'><i class="fas fa-heart"
 											data-fa-transform='grow-3'></i>
 										<?= $members[$_GET['index']]['birthday'] ?>
 									</li>
