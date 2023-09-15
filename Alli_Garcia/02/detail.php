@@ -350,6 +350,7 @@ $members = [
 </head>
 
 <body>
+	
 	<article class='resume-wrapper text-center position-relative'>
 		<?php /* Only the following line changed from the file in the previous assignment */?>
 		<div class='mb-4'><a href='index.php' class='btn btn-primary'>Back to index</a></div>
@@ -379,7 +380,8 @@ $members = [
 										</a></li>
 									<li class='mb-2'><i class="fas fa-heart"
 											data-fa-transform='grow-3'></i>
-										<?= $age ?>
+										<?= $age = calculateAge($team[$i]['birthday']);
+											$age ?>
 									</li>
 								</ul>
 							</div><!--//primary-info-->
@@ -413,7 +415,7 @@ $members = [
 					<h2 class='resume-section-title text-uppercase font-weight-bold pb-3 mb-3'>Summary</h2>
 					<div class='resume-section-content'>
 						<p class='mb-0'>
-							<?= $members[$_GET['index']]['summary'] ?>
+							<?=$members[$_GET['index']]['summary'] ?>
 						</p>
 					</div>
 				</section><!--//summary-section-->
