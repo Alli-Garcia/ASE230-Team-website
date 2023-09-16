@@ -1,9 +1,10 @@
 <?php
-function calculateAge($dateOfBirth) {
-    $dob = new DateTime($dateOfBirth);
-    $currentDate = new DateTime();
-    $age = $currentDate->diff($dob)->y;
-    return $age;
+function calculateAge($dateOfBirth)
+{
+	$dob = new DateTime($dateOfBirth);
+	$currentDate = new DateTime();
+	$age = $currentDate->diff($dob)->y;
+	return $age;
 }
 $members = [
 	[
@@ -250,14 +251,13 @@ $members = [
 	],
 	[
 		'profilePicture' => 'assets/images/profile3.jpg',
-		'name' => 'Billon Deckerich',
+		'name' => 'Dillon Beckerich',
 		'birthday' => ' 01/14/2001',
 		'desiredJob' => 'Cybersecurity Specialist',
 		'email' => 'bdeckrick@outlook.com',
 		'phone' => '555-242-9113',
 		'linkedin' => 'https://shorturl.at/fkyJ9',
 		'github' => 'https://github.com/NoirJazz',
-		'website' => 'https://github.com/NoirJazz',
 		'summary' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 		'experience' => [
 			[
@@ -311,14 +311,35 @@ $members = [
 		],
 		'projects' => [
 			[
-				'img' => '',
-				'name' => 'Project 1',
-				'description' => 'Brief description of Project 1.',
-				'link' => ''
+				'img' => 'Alli_Garcia/02/assets/images/Websites.png',
+				'name' => 'INF-285',
+				'description' => 'The first website I made.',
+				'link' => 'https://github.com/NoirJazz/INF-286"'
 			],
 		],
 	]
 ];
+
+function displayWorkExperience($workExperienceItem)
+{
+	echo "Title: " . $workExperienceItem['title'] . "<br>";
+	echo "Organization: " . $workExperienceItem['organization'] . "<br>";
+	echo "Years: " . $workExperienceItem['years'] . "<br>";
+	echo "Description: " . $workExperienceItem['description'] . "<br>";
+	echo "Achievements: " . $workExperienceItem['achievements'] . "<br>";
+	foreach ($workExperienceItem['achievements'] as $achievement) {
+		echo $achievement . "<br>";
+	}
+	echo "Technologies: " . $workExperienceItem['technologies'] . "<br>";
+	foreach ($workExperienceItem['technologies'] as $technology) {
+		echo $technology . "<br>";
+	}
+
+	foreach ($members[$_GET['index']]['experience'] as $workExperienceItem) {
+		displayWorkExperience($workExperienceItem);
+	}
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -350,7 +371,7 @@ $members = [
 </head>
 
 <body>
-	
+
 	<article class='resume-wrapper text-center position-relative'>
 		<?php /* Only the following line changed from the file in the previous assignment */?>
 		<div class='mb-4'><a href='index.php' class='btn btn-primary'>Back to index</a></div>
@@ -378,10 +399,9 @@ $members = [
 												data-fa-transform='grow-6'></i>
 											<?= $members[$_GET['index']]['phone'] ?>
 										</a></li>
-									<li class='mb-2'><i class="fas fa-heart"
-											data-fa-transform='grow-3'></i>
+									<li class='mb-2'><i class="fas fa-heart" data-fa-transform='grow-3'></i>
 										<?= $age = calculateAge($members[$_GET['index']]['birthday']);
-											$age ?>
+										$age ?>
 									</li>
 								</ul>
 							</div><!--//primary-info-->
@@ -415,7 +435,7 @@ $members = [
 					<h2 class='resume-section-title text-uppercase font-weight-bold pb-3 mb-3'>Summary</h2>
 					<div class='resume-section-content'>
 						<p class='mb-0'>
-							<?=$members[$_GET['index']]['summary'] ?>
+							<?= $members[$_GET['index']]['summary'] ?>
 						</p>
 					</div>
 				</section><!--//summary-section-->
