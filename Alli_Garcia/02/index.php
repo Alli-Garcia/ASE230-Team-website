@@ -95,7 +95,7 @@ $team = [
     <article class="resume-wrapper text-center position-relative">
         <div class="resume-wrapper-inner mx-auto text-start bg-white shadow-lg">
             <h1 class="py-4 text-center">OUR AMAZING TEAM</h1>
-				<?php for($i = 0; $i < count($team); $i++){generateCard($i,$team);};?><!--iterates through team and displays a card for each member.
+				<?php for($i = 0; $i < count($team); $i++){generateCard($i,$team);};?><!--iterates through team and displays a card for each member.-->
         </div>
     </article>
 
