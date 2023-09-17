@@ -50,23 +50,6 @@ function displayWorkExperience($workExperienceItem)
 		'</div><!--//resume-timeline-item-desc-->
 
 									</article><!--//resume-timeline-item-->';
-
-	// echo "Title: " . $workExperienceItem['title'] . "<br>";
-	// echo "Organization: " . $workExperienceItem['organization'] . "<br>";
-	// echo "Years: " . $workExperienceItem['years'] . "<br>";
-	// echo "Description: " . $workExperienceItem['description'] . "<br>";
-	// echo "Achievements: " . $workExperienceItem['achievements'] . "<br>";
-	// foreach ($workExperienceItem['achievements'] as $achievement) {
-	// 	echo $achievement . "<br>";
-	// }
-	// echo "Technologies: " . $workExperienceItem['technologies'] . "<br>";
-	// foreach ($workExperienceItem['technologies'] as $technology) {
-	// 	echo $technology . "<br>";
-	// }
-
-	// foreach ($members[$_GET['index']]['experience'] as $workExperienceItem) {
-	// 	displayWorkExperience($workExperienceItem);
-	// }
 }
 
 $members = [
