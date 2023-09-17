@@ -6,6 +6,69 @@ function calculateAge($dateOfBirth)
 	$age = $currentDate->diff($dob)->y;
 	return $age;
 }
+
+function displayWorkExperience($workExperienceItem)
+{
+	echo
+		'<article class="resume-timeline-item position-relative pb-5">
+
+										<div class="resume-timeline-item-header mb-2">
+											<div class="d-flex flex-column flex-md-row">
+												<h3 class="resume-position-title font-weight-bold mb-1">' . $workExperienceItem['title'] .
+		'</h3>
+												<div class="resume-company-name ms-auto">' . $workExperienceItem['organization'] . '</div>
+											</div><!--//row-->
+											<div class="resume-position-time">' . $workExperienceItem['years'] . '</div>
+										</div><!--//resume-timeline-item-header-->
+										<div class="resume-timeline-item-desc">
+											<p>' . $workExperienceItem['description'] . '</p>';
+	// Adds achievements section only if there are any achievements for that experience.
+	if (array_key_exists('achievements', $workExperienceItem)) {
+		echo
+			'<h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
+												 <ul>';
+		// Loops through achievements for that experience and adds to page.
+		for ($i = 0; $i < count($workExperienceItem['achievements']); $i++) {
+			echo '<li>' . $workExperienceItem['achievements'][$i] . '</li>';
+		}
+		echo
+			'</ul>';
+	}
+	// Adds technologies used section only if there are any technologies used for that experience.
+	if (array_key_exists('technologies', $workExperienceItem)) {
+		echo
+			'<h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
+												<ul class="list-inline">';
+		// Loops through technologies for that experience and adds to page.
+		for ($i = 0; $i < count($workExperienceItem['technologies']); $i++) {
+			echo '<li class="list-inline-item"><span class="badge bg-secondary badge-pill">' . $workExperienceItem['technologies'][$i] . '</span></li>';
+		}
+		echo
+			'</ul>';
+	}
+	echo
+		'</div><!--//resume-timeline-item-desc-->
+
+									</article><!--//resume-timeline-item-->';
+
+	// echo "Title: " . $workExperienceItem['title'] . "<br>";
+	// echo "Organization: " . $workExperienceItem['organization'] . "<br>";
+	// echo "Years: " . $workExperienceItem['years'] . "<br>";
+	// echo "Description: " . $workExperienceItem['description'] . "<br>";
+	// echo "Achievements: " . $workExperienceItem['achievements'] . "<br>";
+	// foreach ($workExperienceItem['achievements'] as $achievement) {
+	// 	echo $achievement . "<br>";
+	// }
+	// echo "Technologies: " . $workExperienceItem['technologies'] . "<br>";
+	// foreach ($workExperienceItem['technologies'] as $technology) {
+	// 	echo $technology . "<br>";
+	// }
+
+	// foreach ($members[$_GET['index']]['experience'] as $workExperienceItem) {
+	// 	displayWorkExperience($workExperienceItem);
+	// }
+}
+
 $members = [
 	[
 		'profilePicture' => 'assets/images/profile0.jpg',
@@ -258,6 +321,7 @@ $members = [
 		'phone' => '555-242-9113',
 		'linkedin' => 'https://shorturl.at/fkyJ9',
 		'github' => 'https://github.com/NoirJazz',
+		'website' => 'https://github.com/NoirJazz',
 		'summary' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 		'experience' => [
 			[
@@ -319,27 +383,6 @@ $members = [
 		],
 	]
 ];
-
-function displayWorkExperience($workExperienceItem)
-{
-	echo "Title: " . $workExperienceItem['title'] . "<br>";
-	echo "Organization: " . $workExperienceItem['organization'] . "<br>";
-	echo "Years: " . $workExperienceItem['years'] . "<br>";
-	echo "Description: " . $workExperienceItem['description'] . "<br>";
-	echo "Achievements: " . $workExperienceItem['achievements'] . "<br>";
-	foreach ($workExperienceItem['achievements'] as $achievement) {
-		echo $achievement . "<br>";
-	}
-	echo "Technologies: " . $workExperienceItem['technologies'] . "<br>";
-	foreach ($workExperienceItem['technologies'] as $technology) {
-		echo $technology . "<br>";
-	}
-
-	foreach ($members[$_GET['index']]['experience'] as $workExperienceItem) {
-		displayWorkExperience($workExperienceItem);
-	}
-}
-
 
 ?>
 <!DOCTYPE html>
@@ -448,7 +491,7 @@ function displayWorkExperience($workExperienceItem)
 								<div class='resume-timeline position-relative'>
 
 									<?php
-									// Loop that goes through skills array for member and adds list item for each skill.
+									// Loop that goes through experience array and adds experience items to page.
 									for ($i = 0; $i < count($members[$_GET['index']]['experience']); $i++) {
 										echo
 											'<article class="resume-timeline-item position-relative pb-5">
