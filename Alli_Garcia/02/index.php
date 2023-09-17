@@ -7,26 +7,26 @@ function calculateAge($dateOfBirth) {
     return $age;
 }
 function generateCard($i,$team) {	
-                $age = calculateAge($team[$i]['birthday']);
-                echo '<header class="resume-header pt-4 pt-md-0">
-                     <div class="row">
-                         <div class="col-block col-md-auto resume-picture-holder text-center text-md-start">
-                             <img class="picture" src="' . $team[$i]['photo'] . '" alt="' . $team[$i]['name'] . '"><!--//to do:add source in php-->
-                         </div><!--//col-->
-                         <div class="col">
-                             <div class="row p-4 justify-content-center justify-content-md-between">
-                                 <div class="primary-info col-auto">
-                                     <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">' . $team[$i]['name'] . '</h1><!--//name line-->
-                                     <div class="title mb-3">' . $team[$i]['role'] . '</div><!--//role line-->
-                                     <div class="title mb-3">Age: ' . $age . ' years</div>
-                                     <a href=detail.php?index=' . $i . ' class="btn btn-secondary">' . $team[$i]['profile'] . '</a><!--//Link the index page to the detail page using a different GET value for each person-->
-                                 </div><!--//primary-info-->
-                                 <div class="secondary-info col-auto mt-2">' . $team[$i]['secondaryInfo'] . '</div><!--//secondary-info-->
-                             </div><!--//row-->
-                         </div><!--//col-->
-                     </div><!--//row-->
-                 </header>
-                 <br>';             
+	$age = calculateAge($team[$i]['birthday']);
+	echo '<header class="resume-header pt-4 pt-md-0">
+	     <div class="row">
+		 <div class="col-block col-md-auto resume-picture-holder text-center text-md-start">
+		     <img class="picture" src="' . $team[$i]['photo'] . '" alt="' . $team[$i]['name'] . '"><!--//to do:add source in php-->
+		 </div><!--//col-->
+		 <div class="col">
+		     <div class="row p-4 justify-content-center justify-content-md-between">
+			 <div class="primary-info col-auto">
+			     <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">' . $team[$i]['name'] . '</h1><!--//name line-->
+			     <div class="title mb-3">' . $team[$i]['role'] . '</div><!--//role line-->
+			     <div class="title mb-3">Age: ' . $age . ' years</div>
+			     <a href=detail.php?index=' . $i . ' class="btn btn-secondary">' . $team[$i]['profile'] . '</a><!--//Link the index page to the detail page using a different GET value for each person-->
+			 </div><!--//primary-info-->
+			 <div class="secondary-info col-auto mt-2">' . $team[$i]['secondaryInfo'] . '</div><!--//secondary-info-->
+		     </div><!--//row-->
+		 </div><!--//col-->
+	     </div><!--//row-->
+	 </header>
+	 <br>';             
 }
 
 $team = [
