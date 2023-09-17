@@ -1,10 +1,57 @@
 <?php
-function calculateAge($dateOfBirth) {
-    $dob = new DateTime($dateOfBirth);
-    $currentDate = new DateTime();
-    $age = $currentDate->diff($dob)->y;
-    return $age;
+function calculateAge($dateOfBirth)
+{
+	$dob = new DateTime($dateOfBirth);
+	$currentDate = new DateTime();
+	$age = $currentDate->diff($dob)->y;
+	return $age;
 }
+
+function displayWorkExperience($workExperienceItem)
+{
+	echo
+		'<article class="resume-timeline-item position-relative pb-5">
+
+										<div class="resume-timeline-item-header mb-2">
+											<div class="d-flex flex-column flex-md-row">
+												<h3 class="resume-position-title font-weight-bold mb-1">' . $workExperienceItem['title'] .
+		'</h3>
+												<div class="resume-company-name ms-auto">' . $workExperienceItem['organization'] . '</div>
+											</div><!--//row-->
+											<div class="resume-position-time">' . $workExperienceItem['years'] . '</div>
+										</div><!--//resume-timeline-item-header-->
+										<div class="resume-timeline-item-desc">
+											<p>' . $workExperienceItem['description'] . '</p>';
+	// Adds achievements section only if there are any achievements for that experience.
+	if (array_key_exists('achievements', $workExperienceItem)) {
+		echo
+			'<h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
+												 <ul>';
+		// Loops through achievements for that experience and adds to page.
+		for ($i = 0; $i < count($workExperienceItem['achievements']); $i++) {
+			echo '<li>' . $workExperienceItem['achievements'][$i] . '</li>';
+		}
+		echo
+			'</ul>';
+	}
+	// Adds technologies used section only if there are any technologies used for that experience.
+	if (array_key_exists('technologies', $workExperienceItem)) {
+		echo
+			'<h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
+												<ul class="list-inline">';
+		// Loops through technologies for that experience and adds to page.
+		for ($i = 0; $i < count($workExperienceItem['technologies']); $i++) {
+			echo '<li class="list-inline-item"><span class="badge bg-secondary badge-pill">' . $workExperienceItem['technologies'][$i] . '</span></li>';
+		}
+		echo
+			'</ul>';
+	}
+	echo
+		'</div><!--//resume-timeline-item-desc-->
+
+									</article><!--//resume-timeline-item-->';
+}
+
 $members = [
 	[
 		'profilePicture' => 'assets/images/profile0.jpg',
@@ -250,7 +297,7 @@ $members = [
 	],
 	[
 		'profilePicture' => 'assets/images/profile3.jpg',
-		'name' => 'Billon Deckerich',
+		'name' => 'Dillon Beckerich',
 		'birthday' => ' 01/14/2001',
 		'desiredJob' => 'Cybersecurity Specialist',
 		'email' => 'bdeckrick@outlook.com',
@@ -311,10 +358,10 @@ $members = [
 		],
 		'projects' => [
 			[
-				'img' => '',
-				'name' => 'Project 1',
-				'description' => 'Brief description of Project 1.',
-				'link' => ''
+				'img' => 'Alli_Garcia/02/assets/images/Websites.png',
+				'name' => 'INF-285',
+				'description' => 'The first website I made.',
+				'link' => 'https://github.com/NoirJazz/INF-286"'
 			],
 		],
 	]
@@ -350,7 +397,7 @@ $members = [
 </head>
 
 <body>
-	
+
 	<article class='resume-wrapper text-center position-relative'>
 		<?php /* Only the following line changed from the file in the previous assignment */?>
 		<div class='mb-4'><a href='index.php' class='btn btn-primary'>Back to index</a></div>
@@ -378,10 +425,9 @@ $members = [
 												data-fa-transform='grow-6'></i>
 											<?= $members[$_GET['index']]['phone'] ?>
 										</a></li>
-									<li class='mb-2'><i class="fas fa-heart"
-											data-fa-transform='grow-3'></i>
+									<li class='mb-2'><i class="fas fa-heart" data-fa-transform='grow-3'></i>
 										<?= $age = calculateAge($members[$_GET['index']]['birthday']);
-											$age ?>
+										$age ?>
 									</li>
 								</ul>
 							</div><!--//primary-info-->
@@ -415,7 +461,7 @@ $members = [
 					<h2 class='resume-section-title text-uppercase font-weight-bold pb-3 mb-3'>Summary</h2>
 					<div class='resume-section-content'>
 						<p class='mb-0'>
-							<?=$members[$_GET['index']]['summary'] ?>
+							<?= $members[$_GET['index']]['summary'] ?>
 						</p>
 					</div>
 				</section><!--//summary-section-->
@@ -428,49 +474,9 @@ $members = [
 								<div class='resume-timeline position-relative'>
 
 									<?php
-									// Loop that goes through skills array for member and adds list item for each skill.
+									// Loop that goes through experience array and adds experience items to page.
 									for ($i = 0; $i < count($members[$_GET['index']]['experience']); $i++) {
-										echo
-											'<article class="resume-timeline-item position-relative pb-5">
-
-										<div class="resume-timeline-item-header mb-2">
-											<div class="d-flex flex-column flex-md-row">
-												<h3 class="resume-position-title font-weight-bold mb-1">' . $members[$_GET['index']]['experience'][$i]['title'] .
-											'</h3>
-												<div class="resume-company-name ms-auto">' . $members[$_GET['index']]['experience'][$i]['organization'] . '</div>
-											</div><!--//row-->
-											<div class="resume-position-time">' . $members[$_GET['index']]['experience'][$i]['years'] . '</div>
-										</div><!--//resume-timeline-item-header-->
-										<div class="resume-timeline-item-desc">
-											<p>' . $members[$_GET['index']]['experience'][$i]['description'] . '</p>';
-										// Adds achievements section only if there are any achievements for that experience.
-										if (array_key_exists('achievements', $members[$_GET['index']]['experience'][$i])) {
-											echo
-												'<h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
-												 <ul>';
-											// Loops through achievements for that experience and adds to page.
-											for ($j = 0; $j < count($members[$_GET['index']]['experience'][$i]['achievements']); $j++) {
-												echo '<li>' . $members[$_GET['index']]['experience'][$i]['achievements'][$j] . '</li>';
-											}
-											echo
-												'</ul>';
-										}
-										// Adds technologies used section only if there are any technologies used for that experience.
-										if (array_key_exists('technologies', $members[$_GET['index']]['experience'][$i])) {
-											echo
-												'<h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
-												<ul class="list-inline">';
-											// Loops through technologies for that experience and adds to page.
-											for ($j = 0; $j < count($members[$_GET['index']]['experience'][$i]['technologies']); $j++) {
-												echo '<li class="list-inline-item"><span class="badge bg-secondary badge-pill">' . $members[$_GET['index']]['experience'][$i]['technologies'][$j] . '</span></li>';
-											}
-											echo
-												'</ul>';
-										}
-										echo
-											'</div><!--//resume-timeline-item-desc-->
-
-									</article><!--//resume-timeline-item-->';
+										displayWorkExperience($members[$_GET['index']]['experience'][$i]);
 									}
 									?>
 								</div><!--//resume-timeline-->
