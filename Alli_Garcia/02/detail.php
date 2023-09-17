@@ -476,47 +476,7 @@ $members = [
 									<?php
 									// Loop that goes through experience array and adds experience items to page.
 									for ($i = 0; $i < count($members[$_GET['index']]['experience']); $i++) {
-										echo
-											'<article class="resume-timeline-item position-relative pb-5">
-
-										<div class="resume-timeline-item-header mb-2">
-											<div class="d-flex flex-column flex-md-row">
-												<h3 class="resume-position-title font-weight-bold mb-1">' . $members[$_GET['index']]['experience'][$i]['title'] .
-											'</h3>
-												<div class="resume-company-name ms-auto">' . $members[$_GET['index']]['experience'][$i]['organization'] . '</div>
-											</div><!--//row-->
-											<div class="resume-position-time">' . $members[$_GET['index']]['experience'][$i]['years'] . '</div>
-										</div><!--//resume-timeline-item-header-->
-										<div class="resume-timeline-item-desc">
-											<p>' . $members[$_GET['index']]['experience'][$i]['description'] . '</p>';
-										// Adds achievements section only if there are any achievements for that experience.
-										if (array_key_exists('achievements', $members[$_GET['index']]['experience'][$i])) {
-											echo
-												'<h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
-												 <ul>';
-											// Loops through achievements for that experience and adds to page.
-											for ($j = 0; $j < count($members[$_GET['index']]['experience'][$i]['achievements']); $j++) {
-												echo '<li>' . $members[$_GET['index']]['experience'][$i]['achievements'][$j] . '</li>';
-											}
-											echo
-												'</ul>';
-										}
-										// Adds technologies used section only if there are any technologies used for that experience.
-										if (array_key_exists('technologies', $members[$_GET['index']]['experience'][$i])) {
-											echo
-												'<h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
-												<ul class="list-inline">';
-											// Loops through technologies for that experience and adds to page.
-											for ($j = 0; $j < count($members[$_GET['index']]['experience'][$i]['technologies']); $j++) {
-												echo '<li class="list-inline-item"><span class="badge bg-secondary badge-pill">' . $members[$_GET['index']]['experience'][$i]['technologies'][$j] . '</span></li>';
-											}
-											echo
-												'</ul>';
-										}
-										echo
-											'</div><!--//resume-timeline-item-desc-->
-
-									</article><!--//resume-timeline-item-->';
+										displayWorkExperience($members[$_GET['index']]['experience'][$i]);
 									}
 									?>
 								</div><!--//resume-timeline-->
